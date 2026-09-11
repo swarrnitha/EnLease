@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "EnLease — Industrial & Warehousing Leasing Platform",
@@ -12,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+    <html lang="en" className={`${outfit.className} h-full antialiased`}>
+      <body className="bg-slate-50 text-slate-900 min-h-full flex flex-col">
         {children}
       </body>
     </html>
